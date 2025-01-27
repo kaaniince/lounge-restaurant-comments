@@ -9,7 +9,7 @@ class SentimentAnalyzerServicer(sentiment_analyzer_pb2_grpc.SentimentAnalyzerSer
     def AnalyzeSentiment(self, request, context):
         text = request.text
         sentiment = self._get_sentiment(text)
-        time.sleep(len(text) * 0.01)  # Metin uzunluğuna bağlı gecikme
+        time.sleep(len(text) * 0.01) 
         return sentiment_analyzer_pb2.SentimentResponse(sentiment=sentiment)
 
     def _get_sentiment(self, text):
