@@ -28,25 +28,31 @@ Bu proje, bir restoran yorum sistemi simülasyonudur. Kafka, gRPC, PostgreSQL ve
    python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. sentiment_analyzer.proto
    ```
 
-4. Producer'ı çalıştırın:
+4. gRPC server'ı çalıştırın:
+
+   ```bash
+   python grpc-server/server.py
+   ```
+
+5. Producer'ı çalıştırın:
 
    ```bash
    python producer/producer.py
    ```
 
-5. Consumer'ı çalıştırın:
+6. Consumer'ı çalıştırın:
 
    ```bash
    python consumer/consumer.py
    ```
 
-6. Rest API'yi çalıştırın:
+7. Rest API'yi çalıştırın:
 
    ```bash
-   python -m consumer.consumer
+   python rest-api/app.py
    ```
 
-7. Rest API'yi test edin:
+8. Rest API'yi test edin:
 
    ```bash
    curl http://localhost:5000/comments
